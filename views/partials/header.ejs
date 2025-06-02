@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Profile Management System</title>
+  <link rel="stylesheet" href="/css/header.css" />
+</head>
+<body>
+
+  <nav class="sidebar">
+  <ul>
+    <li><a href="/dashboard" class="<%= activePage === 'dashboard' ? 'active' : '' %>">Dashboard</a></li>
+    <li><a href="/profile" class="<%= activePage === 'profile' ? 'active' : '' %>">Profile</a></li>
+    <li>
+      <form action="/logout" method="POST" class="logout-form">
+        <button type="submit">Logout</button>
+      </form>
+    </li>
+  </ul>
+</nav>
+
+
+  <main class="content">
+    <!-- Your main content here -->
+  </main>
+
+</body>
+</html>

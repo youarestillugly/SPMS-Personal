@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Academic Results</title>
+  <link rel="stylesheet" href="/css/home.css" />
+  <style>
+    main {
+      padding: 20px;
+      background: #f5f6fa;
+      min-height: 90vh;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 12px 15px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background: #4a90e2;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <%- include('partials/header', { activePage: 'academic' }) %>
+
+  <main>
+    <h2>Academic Results</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Grade</th>
+          <th>Remarks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% results.forEach(result => { %>
+          <tr>
+            <td><%= result.subject %></td>
+            <td><%= result.grade %></td>
+            <td><%= result.remarks %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </main>
+
+</body>
+</html>

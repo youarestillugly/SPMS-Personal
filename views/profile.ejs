@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Profile</title>
+  <link rel="stylesheet" href="/css/profile.css" />
+</head>
+<body>
+  <%- include('partials/header', { activePage: 'profile' }) %>
+
+<main>
+  <section class="profile-section">
+    <% if (!profile) { %>
+      <p>You don't have any profile.</p>
+      <a href="/profile/add-profile"><button>Add Profile</button></a>
+    <% } else if (profile.status !== 'approved') { %>
+      <p>Your profile is pending admin approval.</p>
+    <% } else { %>
+      <h2>My Profile</h2>
+      <p><strong>Name:</strong> <%= profile.name %></p>
+      <p><strong>Email:</strong> <%= profile.email %></p>
+      <p><strong>Phone:</strong> <%= profile.phone || '-' %></p>
+      <p><strong>Course:</strong> <%= profile.course || '-' %></p>
+      <p><strong>Year:</strong> <%= profile.year || '-' %></p>
+      <p><strong>Village:</strong> <%= profile.village || '-' %></p>
+      <p><strong>Dzongkhag:</strong> <%= profile.Dzongkhag || '-' %></p>
+      <img src="<%= profile.profile_picture %>" alt="Profile Picture" style="max-width: 150px; border-radius: 50%;" />
+
+      <div class="profile-buttons">
+        <a href="/profile/edit-profile"><button class="edit-btn">Edit</button></a>
+
+        <form action="/profile/delete-profile" method="POST" onsubmit="return confirm('Are you sure?');" style="display:inline;">
+          <button class="delete-btn" type="submit">Delete</button>
+        </form>
+      </div>
+    <% } %>
+  </section>
+</main>
+
+
+</body>
+</html>

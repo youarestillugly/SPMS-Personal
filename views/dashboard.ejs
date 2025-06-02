@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard - All User Profiles</title>
+  <link rel="stylesheet" href="/css/userdashboard.css" />
+</head>
+<body>
+  <%- include('partials/header', { activePage: 'dashboard' }) %>
+
+  <main>
+    <h2>All User Profiles</h2>
+
+    <div class="card-container">
+      <% if (profiles && profiles.length > 0) { %>
+        <% profiles.forEach(profile => { %>
+          <div class="card" data-id="<%= profile.id %>">
+            <img
+              src="<%= profile.profile_picture || '/images/default-profile.png' %>"
+              alt="<%= profile.name %>"
+              class="profile-pic"
+            />
+            <h4><%= profile.name %></h4>
+            <button class="btn view-more-btn">View More</button>
+
+            <div class="profile-details">
+              <p><strong>Email:</strong> <%= profile.email %></p>
+              <p><strong>Course:</strong> <%= profile.course || 'N/A' %></p>
+              <p><strong>Contact:</strong> <%= profile.phone || 'N/A' %></p>    
+              <p><strong>Name:</strong> <%= profile.name %></p>       
+              <p><strong>Year:</strong> <%= profile.year || 'N/A' %></p>
+              <p><strong>Village:</strong> <%= profile.village || 'N/A' %></p>
+              <p><strong>Dzongkhag:</strong> <%= profile.Dzongkhag || 'N/A' %></p>
+              <!-- Add other fields if you want -->
+            </div>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <p>No profiles to display.</p>
+      <% } %>
+    </div>
+  </main>
+
+  <script>
+    // Toggle profile details on clicking 'View More'
+    document.querySelectorAll('.view-more-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const card = button.closest('.card');
+        const details = card.querySelector('.profile-details');
+
+        if (details.style.display === 'block') {
+          details.style.display = 'none';
+          button.textContent = 'View More';
+        } else {
+          details.style.display = 'block';
+          button.textContent = 'View Less';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

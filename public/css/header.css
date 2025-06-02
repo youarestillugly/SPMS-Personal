@@ -1,0 +1,74 @@
+/* Reset some default styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  display: flex;
+}
+
+/* Sidebar */
+nav.sidebar {
+  width: 220px;
+  background-color: #4a90e2;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  user-select: none;
+}
+
+nav.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-left: 10px;
+}
+
+nav.sidebar ul li a,
+nav.sidebar form.logout-form button {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  display: block;
+  border-radius: 4px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: background-color 0.3s ease;
+}
+
+nav.sidebar ul li a.active,
+nav.sidebar ul li a:hover,
+nav.sidebar form.logout-form button:hover {
+  background-color: #2e6bd1;
+}
+
+/* Remove extra padding/margin on logout form */
+nav.sidebar form.logout-form {
+  margin: 0;
+  padding: 0;
+}
+
+/* Main content area */
+main.content {
+  margin-left: 220px;
+  padding: 20px;
+  flex-grow: 1;
+  min-height: 100vh;
+  background: #f5f6fa;
+}

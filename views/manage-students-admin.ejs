@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manage Students - Admin Panel</title>
+  <link rel="stylesheet" href="css/manage-students-admin.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="admin-logo">🎓 Admin Panel</div>
+    <ul class="nav-menu">
+      <li><a href="/adminDashboard">Dashboard</a></li>
+      <li><a href="/manage-students-admin" class="active">Manage Students</a></li>
+      <li><a href="/academic-results-admin">Academic Results</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="dashboard">
+    <header class="admin-header">
+      <h1>Manage Students</h1>
+      <p>View, add, edit, or delete student profiles.</p>
+    </header>
+
+    <!-- Add New Student Button -->
+    <div class="add-student">
+      <a href="/add-students-admin" class="btn">+ Add New Student</a>
+    </div>
+
+    <!-- Students Table -->
+    <section class="students-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+  <% students.forEach(student => { %>
+    <tr>
+      <td><%= student.id %></td>
+      <td><%= student.name %></td>
+      <td><%= student.email %></td>
+      <td><%= student.course %></td>
+      <td>
+        <a href="/edit-student-admin/<%= student.id %>" class="btn">Edit</a>
+        <a href="/delete-student-admin/<%= student.id %>" class="btn delete-btn" onclick="return confirm('Are you sure you want to delete this student?')">Delete</a>
+      </td>
+    </tr>
+  <% }) %>
+</tbody>
+      </table>
+    </section>
+  </main>
+
+</body>
+</html>

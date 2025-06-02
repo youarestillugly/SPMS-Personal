@@ -1,0 +1,150 @@
+/* Reset & Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f6f9;
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background: #2e3a59;
+  color: #fff;
+  padding: 2em 1em;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.admin-logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 2em;
+  text-align: center;
+  color: #ffffff;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+
+.nav-menu li a {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5em;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+  background: #5060ff;
+  color: #fff;
+}
+
+/* Main Dashboard */
+.dashboard {
+  margin-left: 240px;
+  padding: 2em;
+  flex: 1;
+}
+
+.admin-header h1 {
+  font-size: 2em;
+  color: #2c3e50;
+  margin-bottom: 0.2em;
+}
+
+.admin-header p {
+  color: #666;
+  margin-bottom: 2em;
+}
+
+/* Add New Student Form */
+.student-form {
+  background-color: #fff;
+  padding: 3em;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 2em auto;
+}
+
+.student-form label {
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+  color: #333;
+}
+
+.student-form input {
+  width: 100%;
+  padding: 1.2em;
+  margin-bottom: 1.5em;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+
+.student-form input:focus {
+  border-color: #5060ff;
+  outline: none;
+}
+
+.student-form button {
+  background-color: #28a745;
+  color: white;
+  padding: 1.2em;
+  border-radius: 8px;
+  font-size: 1.2em;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+.student-form button:hover {
+  background-color: #218838;
+}
+
+.student-form button:focus {
+  outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .dashboard {
+    margin-left: 0;
+    padding: 1em;
+  }
+
+  .student-form {
+    padding: 2em;
+  }
+
+  .admin-header h1 {
+    font-size: 1.8em;
+  }
+
+  .nav-menu li a {
+    font-size: 1.1em;
+  }
+}

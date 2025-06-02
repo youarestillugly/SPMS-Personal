@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Profile Management System</title>
+  <link rel="stylesheet" href="css/landing.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">🎓 Student Profile Management System</div>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    <nav id="navbar">
+      <div class="nav-links">
+        <a href="/"></a>
+      </div>
+      <div class="auth-links">
+        <a href="/login" class="btn">Login</a>
+        <a href="/signup" class="btn">Sign In</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Simplify & Secure Student Profile Management</h1>
+      <p>A centralized system to create, update, and manage student profiles with ease. Keep academic records, personal details, and achievements all in one place.</p>
+      <a href="/signup" class="hero-btn">Get Started</a>
+    </div>
+    <div class="hero-image">
+      <img src="Images/profilee.jpg" alt="Profile Management">
+    </div>
+  </section>
+
+  <section class="features">
+    <h2>Why Use Student Profile Management System?</h2>
+    <div class="feature-cards">
+      <div class="card">Centralized Profile Management</div>
+      <div class="card">Secure Data Management</div>
+      <div class="card">Easy Profile Access</div>
+    </div>
+  </section>
+
+  <section class="about">
+    <h2>About Us</h2>
+    <p>We aim to streamline student data handling for institutions, ensuring data accuracy, easy access, and secure record-keeping using a modern digital interface.</p>
+  </section>
+
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <p>Email: support@studentprofile.com | Phone: +975-12345678</p>
+    <p>Address: Digital Campus, Thimphu, Bhutan</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Student Profile Management System. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const name = localStorage.getItem('studentName');
+    if (name) document.querySelector('.hero-text h1').textContent = `Welcome ${name}, Simplify & Secure Student Profile Management`;
+
+    function toggleMenu() {
+      const nav = document.getElementById('navbar');
+      nav.classList.toggle('show');
+    }
+  </script>
+</body>
+</html>

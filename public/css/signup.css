@@ -1,0 +1,108 @@
+/* Reset and base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1em;
+}
+
+/* Smaller signup container */
+.signup-container {
+  background: #ffffff;
+  padding: 1.5em;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 280px; /* Reduced width */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.signup-container h2 {
+  text-align: center;
+  margin-bottom: 1.2em;
+  color: #333;
+  font-size: 1.2em;
+}
+
+/* Form styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+}
+
+input {
+  padding: 0.7em;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9em;
+}
+
+/* Password wrapper for toggle icon */
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 2em;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #0072ff;
+  font-size: 1em;
+  user-select: none;
+}
+
+/* Error message */
+#password-error {
+  color: red;
+  font-size: 0.8em;
+  margin-top: -0.3em;
+}
+
+/* Button */
+button {
+  padding: 0.8em;
+  background-color: #0072ff;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 0.95em;
+}
+
+button:hover {
+  background-color: #fc9816;
+}
+
+/* Footer */
+p {
+  text-align: center;
+  margin-top: 0.8em;
+  font-size: 0.85em;
+}
+
+a {
+  color: #0072ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

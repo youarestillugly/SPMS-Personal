@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Add Profile</title>
+  <link rel="stylesheet" href="/css/addprofile.css" />
+</head>
+<body>
+
+  <%- include('partials/header', { activePage: 'profile' }) %>
+
+  <main>
+    <section class="profile-section">
+      <div class="profile-form-container">
+        <h2>Add Profile</h2>
+        <form action="/profile/add-profile" method="POST" enctype="multipart/form-data" autocomplete="off">
+          <label>Name:</label>
+          <input type="text" name="name" value="<%= user.name %>" readonly />
+
+          <label>Email:</label>
+          <input type="email" name="email" value="<%= user.email %>" readonly />
+
+          <label>Phone:</label>
+          <input type="text" name="phone" placeholder="Enter your phone number" />
+
+          <label>Course:</label>
+          <input type="text" name="course" placeholder="Enter your course" />
+
+          <label>Year:</label>
+          <input type="text" name="year" placeholder="Enter your year" />
+
+          <label>Village:</label>
+          <input type="text" name="village" placeholder="Enter your village" />
+
+          <label>Dzongkhag:</label>
+          <input type="text" name="Dzongkhag" placeholder="Enter your Dzongkhag" />
+
+          <label>Profile Picture:</label>
+          <input type="file" name="profile_picture" accept="image/*" />
+
+          <button type="submit">Submit for Approval</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Success message card -->
+  <div id="successMessage">
+    <div id="successContent">
+      <p>Profile added successfully!</p>
+      <button onclick="closeSuccess()">OK</button>
+    </div>
+  </div>
+
+  <script>
+    function showSuccess() {
+      document.getElementById('successMessage').style.display = 'flex';
+    }
+    function closeSuccess() {
+      document.getElementById('successMessage').style.display = 'none';
+    }
+
+    window.onload = function() {
+      // Check for query parameter ?added=true
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('added') === 'true') {
+        showSuccess();
+      }
+    };
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Edit Profile</title>
+  <link rel="stylesheet" href="/css/edit-profile.css" />
+</head>
+<body>
+  <div class="form-container">
+    <h2>Edit Your Profile</h2>
+    <form action="/profile/edit-profile" method="POST" enctype="multipart/form-data">
+      <input type="text" name="name" value="<%= profile.name %>" required placeholder="Name" />
+      <input type="email" name="email" value="<%= profile.email %>" required placeholder="Email" />
+      <input type="text" name="phone" value="<%= profile.phone %>" placeholder="Phone" />
+      <input type="text" name="course" value="<%= profile.course %>" placeholder="Course" />
+      <input type="text" name="year" value="<%= profile.year %>" placeholder="Year" />
+      <input type="text" name="village" value="<%= profile.village %>" placeholder="Village" />
+      <input type="text" name="Dzongkhag" value="<%= profile.Dzongkhag %>" placeholder="Dzongkhag" />
+      <input type="file" name="profile_picture" accept="image/*" />
+      <button type="submit">Update Profile</button>
+    </form>
+  </div>
+
+  <!-- Message card -->
+  <div id="messageCard">
+    <div id="messageContent">
+      <p>Profile updated successfully!</p>
+      <button onclick="closeMessage()">OK</button>
+    </div>
+  </div>
+
+  <script>
+    // Function to show the message card
+    function showMessage() {
+      document.getElementById('messageCard').style.display = 'flex';
+    }
+
+    // Function to hide the message card
+    function closeMessage() {
+      document.getElementById('messageCard').style.display = 'none';
+    }
+
+    // Option 1: If you redirect with a query param, you can show the message on page load:
+    window.onload = function() {
+      // Example: URL like /profile/edit-profile?updated=true
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('updated') === 'true') {
+        showMessage();
+      }
+    }
+  </script>
+</body>
+</html>
+s

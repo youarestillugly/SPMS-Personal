@@ -1,0 +1,137 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Body Style */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  min-height: 100vh;
+  padding: 20px 20px 20px 240px; /* Leave space for sidebar */
+}
+
+/* Main content area */
+main {
+  padding: 20px;
+}
+
+/* Profile Section */
+.profile-section {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Headings */
+.profile-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* Paragraphs */
+.profile-section p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* Buttons */
+button,
+.edit-btn,
+.delete-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background-color 0.3s;
+}
+
+button {
+  background-color: #4a90e2;
+  color: white;
+}
+
+button:hover {
+  background-color: #2e6bd1;
+}
+
+.edit-btn {
+  background-color: #ffa500; /* Orange for Edit */
+  color: white;
+  margin-right: 10px;
+}
+
+.edit-btn:hover {
+  background-color: #e28c00;
+}
+
+.delete-btn {
+  background-color: #e74c3c; /* Red for Delete */
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Profile Picture */
+.profile-section img {
+  display: block;
+  margin-top: 15px;
+  max-width: 150px;
+  border-radius: 50%;
+  border: 2px solid #4a90e2;
+}
+
+/* Profile Buttons Container */
+.profile-buttons {
+  margin-top: 20px;
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+  body {
+    padding-left: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-left: 0;
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  .profile-section {
+    padding: 20px;
+    margin: 0 10px;
+  }
+
+  button,
+  .edit-btn,
+  .delete-btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .edit-btn {
+    margin-right: 0;
+  }
+
+  .profile-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+}
