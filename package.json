@@ -1,5 +1,5 @@
 {
-  "name": "volunteer-task-management",
+  "name": "SPMS-Personal",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Gyembowangs/volunteer-task-management.git"
+    "url": "git+https://github.com/youarestillugly/SPMS-Personal.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Gyembowangs/volunteer-task-management/issues"
+    "url": "https://github.com/youarestillugly/SPMS-Personal/issues"
   },
-  "homepage": "https://github.com/Gyembowangs/volunteer-task-management#readme",
+  "homepage": "https://github.com/youarestillugly/SPMS-Personal#readme",
   "dependencies": {
     "bcrypt": "^6.0.0",
     "bcryptjs": "^3.0.2",
