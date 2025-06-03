@@ -5,177 +5,133 @@
   box-sizing: border-box;
 }
 
-/* Base styles */
+/* Body base */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f6f9;
+  background-color: #f5f7fa;
+  color: #333;
   min-height: 100vh;
-  padding: 20px 20px 20px 240px; /* Space for sidebar on desktop */
 }
 
-/* Sidebar */
-nav.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 220px;
-  height: 100vh;
-  background-color: #4285f4;
-  padding-top: 20px;
-  z-index: 1000;
-}
-
-nav.sidebar ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding-left: 0;
-}
-
-nav.sidebar ul li {
-  padding: 10px 20px;
-  color: white;
-  font-weight: bold;
-  transition: background-color 0.3s;
-  cursor: pointer;
-}
-
-nav.sidebar ul li.active {
-  background-color: #ff8800; /* Orange active color */
-  border-radius: 8px;
-}
-
-nav.sidebar ul li:hover {
-  background-color: #3b78d8;
-  border-radius: 8px;
-}
-
-/* Main content */
+/* Main layout with space for sidebar */
 main {
-  padding: 20px;
+  margin-left: 250px; /* adjust to match your sidebar width */
+  padding: 40px 20px;
+  max-width: calc(100% - 250px);
 }
 
 main h2 {
-  margin-bottom: 20px;
-  color: #333;
-  font-size: 1.8rem;
+  font-size: 30px;
+  margin-bottom: 35px;
+  color: #205295;
+  text-align: center;
 }
 
-/* Card grid */
+/* Card Grid */
 .card-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
 }
 
-/* Card */
+/* Individual Card */
 .card {
   background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
   text-align: center;
-  transition: transform 0.2s;
+  transition: transform 0.2s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
 }
 
-/* Profile image */
+/* Profile Image */
 .profile-pic {
   width: 100px;
   height: 100px;
-  object-fit: cover;
   border-radius: 50%;
-  margin-bottom: 12px;
-  border: 2px solid #4a90e2;
+  object-fit: cover;
+  border: 3px solid #205295;
+  margin-bottom: 15px;
+}
+
+/* Card Title */
+.card h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #222;
 }
 
 /* Button */
-.btn.view-more-btn {
-  background-color: #4a90e2;
+.btn {
+  background-color: #205295;
   color: white;
   padding: 8px 16px;
   border: none;
   border-radius: 6px;
+  font-size: 14px;
   cursor: pointer;
-  margin-top: 10px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
 
-.btn.view-more-btn:hover {
-  background-color: #2e6bd1;
+.btn:hover {
+  background-color: #163a6a;
 }
 
-/* Hidden details */
+/* Details Section */
 .profile-details {
   display: none;
   margin-top: 15px;
   text-align: left;
-  background-color: #f9fafb;
-  padding: 10px;
-  border-radius: 8px;
-  font-size: 0.9rem;
+  font-size: 14px;
   color: #444;
 }
 
 .profile-details p {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
-/* Responsive design */
+.profile-details p strong {
+  color: #111;
+}
 
-/* Tablet */
+/* Responsive Design */
 @media (max-width: 1024px) {
-  body {
-    padding-left: 200px;
-  }
-
-  .card-container {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  main {
+    margin-left: 220px; /* smaller sidebar on tablet */
+    max-width: calc(100% - 220px);
   }
 }
 
-/* Mobile */
 @media (max-width: 768px) {
-  body {
-    padding-left: 0;
-    padding-top: 100px; /* Space for mobile nav */
-  }
-
-  nav.sidebar {
-    position: relative !important;
-    width: 100% !important;
-    height: auto !important;
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-around;
-  }
-
-  nav.sidebar ul {
-    flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
-    padding: 0;
-  }
-
-  nav.sidebar ul li {
-    flex-grow: 1;
-    text-align: center;
-  }
-
   main {
-    padding: 10px;
+    margin-left: 0;
+    padding: 20px;
+    max-width: 100%;
   }
 
-  .card-container {
-    grid-template-columns: 1fr;
-  }
-
-  .btn.view-more-btn {
+  .btn {
     width: 100%;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .profile-details {
+    font-size: 13px;
+  }
+
+  .profile-pic {
+    width: 85px;
+    height: 85px;
+  }
+
+  main h2 {
+    font-size: 24px;
   }
 }
