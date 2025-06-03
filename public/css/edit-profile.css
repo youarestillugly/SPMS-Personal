@@ -1,178 +1,138 @@
-/* Base Reset and Font */
+/* Reset and base styles */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Body Background */
 body {
-  background: linear-gradient(to right, #d7e1ec, #f2f7ff);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f8;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 15px;
+  padding: 20px;
 }
 
 /* Form Container */
 .form-container {
-  background: #ffffffcc;
-  padding: 28px 30px;       /* smaller padding */
-  border-radius: 16px;      /* slightly smaller radius */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-  max-width: 380px;         /* smaller width */
+  background-color: #fff;
+  padding: 20px 25px;
+  border-radius: 10px;
+  max-width: 420px;
   width: 100%;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.form-container:hover {
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-}
-
-/* Form Title */
 .form-container h2 {
   text-align: center;
-  font-size: 1.75rem;       /* slightly smaller */
-  font-weight: 700;
-  color: #222;
-  margin-bottom: 20px;      /* less margin */
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  color: #333;
 }
 
-/* Input Fields */
-.form-container input[type="text"],
-.form-container input[type="email"],
-.form-container input[type="file"] {
+/* Inputs */
+form input[type="text"],
+form input[type="email"],
+form input[type="file"] {
   width: 100%;
-  padding: 10px 14px;       /* smaller padding */
-  margin-bottom: 14px;      /* less margin */
-  border: 2px solid #ccc;
-  border-radius: 10px;      /* smaller radius */
-  font-size: 0.95rem;       /* slightly smaller font */
-  transition: border-color 0.3s, box-shadow 0.3s;
+  padding: 8px 10px;
+  margin: 6px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: border 0.3s;
 }
 
-.form-container input:focus {
-  border-color: #0066ff;
-  box-shadow: 0 0 6px rgba(0, 102, 255, 0.3);
+form input:focus {
+  border-color: #007BFF;
   outline: none;
 }
 
-/* Submit Button */
-.form-container button[type="submit"] {
+/* Buttons */
+form button {
   width: 100%;
-  background: linear-gradient(90deg, #0066ff, #004aad);
-  color: #fff;
-  font-weight: 700;
-  padding: 12px;
-  font-size: 1rem;
+  padding: 9px;
+  margin-top: 10px;
   border: none;
-  border-radius: 12px;
+  border-radius: 6px;
+  font-size: 0.95rem;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.6);
-  transition: background 0.3s, transform 0.2s;
+  transition: background 0.3s;
 }
 
-.form-container button[type="submit"]:hover {
-  background: linear-gradient(90deg, #004aad, #002e7a);
-  transform: translateY(-2px);
+form button[type="submit"] {
+  background-color: #007BFF;
+  color: #fff;
 }
 
-.form-container button[type="submit"]:active {
-  transform: translateY(0);
+form button[type="submit"]:hover {
+  background-color: #0056b3;
 }
 
-/* Success Message Card */
+.back-button {
+  background-color: #6c757d;
+  color: #fff;
+  margin-top: 8px;
+}
+
+.back-button:hover {
+  background-color: #5a6268;
+}
+
+/* Message Card */
 #messageCard {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.35);
   display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  z-index: 1000;
 }
 
 #messageContent {
-  background: white;
-  padding: 24px 30px;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  padding: 20px 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
-  max-width: 280px;
   width: 90%;
+  max-width: 300px;
 }
 
 #messageContent p {
-  font-size: 1.2rem;
-  color: #4caf50;
-  font-weight: 700;
-  margin-bottom: 18px;
+  font-size: 1rem;
+  margin-bottom: 12px;
+  color: #333;
 }
 
 #messageContent button {
-  background-color: #4caf50;
+  background-color: #007BFF;
   color: white;
+  padding: 8px 16px;
   border: none;
-  padding: 10px 24px;
-  font-weight: 700;
-  border-radius: 10px;
-  cursor: pointer;
+  border-radius: 6px;
   font-size: 0.95rem;
-  transition: background-color 0.3s;
+  cursor: pointer;
 }
 
 #messageContent button:hover {
-  background-color: #388e3c;
+  background-color: #0056b3;
 }
 
-/* Responsive Styles */
-@media (max-width: 600px) {
-  body {
-    padding: 12px 8px;
-  }
-
+/* Responsive */
+@media (max-width: 500px) {
   .form-container {
-    padding: 20px 18px;
-    max-width: 100%;
-    border-radius: 12px;
+    padding: 15px 20px;
   }
 
-  .form-container h2 {
-    font-size: 1.5rem;
-    margin-bottom: 18px;
-  }
-
-  .form-container input[type="text"],
-  .form-container input[type="email"],
-  .form-container input[type="file"] {
-    padding: 8px 10px;
-    font-size: 0.9rem;
-    margin-bottom: 12px;
-  }
-
-  .form-container button[type="submit"] {
-    padding: 10px;
-    font-size: 0.95rem;
-    border-radius: 10px;
-  }
-
-  #messageContent {
-    padding: 18px 22px;
-    max-width: 260px;
-    width: 95%;
-  }
-
-  #messageContent p {
-    font-size: 1rem;
-  }
-
-  #messageContent button {
-    padding: 8px 20px;
-    font-size: 0.9rem;
-    border-radius: 8px;
+  form input,
+  form button {
+    font-size: 0.85rem;
   }
 }
