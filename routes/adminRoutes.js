@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const adminController = require('../controllers/adminController');
 const { isAdmin } = require('../middleware/authMiddleware');
-const ProfileModel = require('../models/Profile'); // example mongoose model
+const ProfileModel = require('../models/profile'); // example mongoose model
 
 router.get('/dashboard', async (req, res) => {
   try {
