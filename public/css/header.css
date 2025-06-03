@@ -1,74 +1,94 @@
-/* Reset some default styles */
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: Arial, sans-serif;
-  display: flex;
-}
-
-/* Sidebar */
+/* Base styles */
 nav.sidebar {
   width: 220px;
-  background-color: #4a90e2;
-  color: white;
+  background-color: #438de4;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  padding-top: 20px;
+  padding-top: 60px;
   position: fixed;
-  top: 0;
   left: 0;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-  user-select: none;
+  top: 0;
+  z-index: 1000;
+  transition: transform 0.3s ease;
 }
 
 nav.sidebar ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  padding-left: 10px;
+  align-items: stretch;
+  gap: 10px;
+}
+
+
+nav.sidebar ul li {
+  margin: 10px 0;
 }
 
 nav.sidebar ul li a,
-nav.sidebar form.logout-form button {
+nav.sidebar ul li button {
+  display: block;
+  padding: 12px 20px;
   color: white;
   text-decoration: none;
-  font-weight: bold;
-  padding: 10px 20px;
-  display: block;
-  border-radius: 4px;
-  background: none;
+  font-weight: 500;
   border: none;
+  background: none;
+  width: 100%;
   text-align: left;
   cursor: pointer;
-  width: 100%;
-  font-size: 1rem;
-  font-family: inherit;
-  transition: background-color 0.3s ease;
+  font-size: 16px;
+  transition: background 0.2s ease;
 }
 
-nav.sidebar ul li a.active,
 nav.sidebar ul li a:hover,
-nav.sidebar form.logout-form button:hover {
-  background-color: #2e6bd1;
+nav.sidebar ul li button:hover {
+  background-color: #2f6fcb;
+  border-radius: 5px;
 }
 
-/* Remove extra padding/margin on logout form */
-nav.sidebar form.logout-form {
-  margin: 0;
-  padding: 0;
+nav.sidebar ul li a.active {
+  background-color: #2f6fcb;
+  border-radius: 5px;
 }
 
-/* Main content area */
+.menu-toggle {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: none;
+  border: none;
+  color: #438de4;
+  font-size: 28px;
+  z-index: 1100;
+  cursor: pointer;
+  display: none;
+}
+
+/* Main content */
 main.content {
   margin-left: 220px;
-  padding: 20px;
+  padding: 30px;
   flex-grow: 1;
-  min-height: 100vh;
-  background: #f5f6fa;
+  transition: margin-left 0.3s ease;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  nav.sidebar {
+    transform: translateX(-100%);
+  }
+
+  nav.sidebar.active {
+    transform: translateX(0);
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  main.content {
+    margin-left: 0;
+  }
 }
