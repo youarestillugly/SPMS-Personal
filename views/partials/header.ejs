@@ -8,22 +8,28 @@
 </head>
 <body>
 
-  <nav class="sidebar">
-  <ul>
-    <li><a href="/dashboard" class="<%= activePage === 'dashboard' ? 'active' : '' %>">Dashboard</a></li>
-    <li><a href="/profile" class="<%= activePage === 'profile' ? 'active' : '' %>">Profile</a></li>
-    <li>
-      <form action="/logout" method="POST" class="logout-form">
-        <button type="submit">Logout</button>
-      </form>
-    </li>
-  </ul>
-</nav>
+  <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
 
+  <nav class="sidebar">
+    <ul>
+      <li><a href="/dashboard" class="<%= activePage === 'dashboard' ? 'active' : '' %>">Dashboard</a></li>
+      <li><a href="/profile" class="<%= activePage === 'profile' ? 'active' : '' %>">Profile</a></li>
+      <li>
+        <form action="/logout" method="POST" class="logout-form">
+          <button type="submit">Logout</button>
+        </form>
+      </li>
+    </ul>
+  </nav>
 
   <main class="content">
-    <!-- Your main content here -->
+    <!-- Your main content goes here -->
   </main>
 
+  <script>
+    function toggleSidebar() {
+      document.querySelector('nav.sidebar').classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
