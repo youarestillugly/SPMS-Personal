@@ -35,31 +35,19 @@
   </div>
 
   <script>
-    // Toggle password visibility
-    function togglePassword() {
-      const passwordInput = document.getElementById("password");
-      const toggle = document.querySelector(".toggle-password");
-      if (passwordInput.type === "password") {
-        passwordInput.type = "text";
-        toggle.textContent = "🙈";
-      } else {
-        passwordInput.type = "password";
-        toggle.textContent = "👁️";
-      }
-    }
+  function togglePassword(fieldId) {
+    const input = document.getElementById(fieldId);
+    const toggle = input.nextElementSibling;
 
-    // Toggle confirm password visibility
-    function togglePasswordConfirm() {
-      const confirmPasswordInput = document.getElementById("confirm-password");
-      const toggle = document.querySelectorAll(".toggle-password")[1];
-      if (confirmPasswordInput.type === "password") {
-        confirmPasswordInput.type = "text";
-        toggle.textContent = "🙈";
-      } else {
-        confirmPasswordInput.type = "password";
-        toggle.textContent = "👁️";
-      }
+    if (input.type === "password") {
+      input.type = "text";
+      toggle.textContent = "🙈";
+    } else {
+      input.type = "password";
+      toggle.textContent = "👁️";
     }
-  </script>
+  }
+</script>
+
 </body>
 </html>
