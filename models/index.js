@@ -1,6 +1,6 @@
 const sequelize = require('../config/database');
 const User = require('./User');
-const Profile = require('./Profile');
+const Profile = require('./profile');
 
 const setupAssociations = require('./associations');
 
